@@ -72,3 +72,11 @@ let quotes = [
 
 ];
 
+function getRandomQuote (quoteArray) {
+    let max = quoteArray.length;
+    let index = Math.floor(Math.random() * max);
+    let quote = quoteArray[index];
+    console.log(quote);
+    return quote;
+}
+
