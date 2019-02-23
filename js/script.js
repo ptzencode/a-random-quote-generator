@@ -96,8 +96,10 @@ function printQuote () {
     }
 
     print += '</p>';
-
     console.log(print);
+    // loading quote to page
+    document.getElementById('quote-box').innerHTML = print;
 
 }
 
+printQuote();
