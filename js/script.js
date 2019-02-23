@@ -102,4 +102,5 @@ function printQuote () {
 
 }
 
-printQuote();
+// show quote with button click
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
