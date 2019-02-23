@@ -80,3 +80,24 @@ function getRandomQuote (quoteArray) {
     return quote;
 }
 
+function printQuote () {
+    let quoteObj = getRandomQuote(quotes);
+    let print = "";
+
+    print += '<p class="quote">' + quoteObj.quote + '</p>';
+    print += '<p class="source">' + quoteObj.source;
+
+    if(quoteObj.citation) {
+        print += '<span class="citation">' + quoteObj.citation + '</span>';
+    }
+
+    if (quoteObj.year) {
+        print += '<span class="year">' + quoteObj.year + '</span>';
+    }
+
+    print += '</p>';
+
+    console.log(print);
+
+}
+
