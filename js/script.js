@@ -80,6 +80,15 @@ function getRandomQuote (quoteArray) {
     return quote;
 }
 
+function createColor () {
+    function colorComponent() {
+        return Math.floor(Math.random()*255 + 1);
+    }
+    // example: green is rgb(51,170,51)
+    let color = "rgb(" + colorComponent()+ ","+ colorComponent()+ ","+ colorComponent()+ ")";
+    return color;
+}
+
 function printQuote () {
     let quoteObj = getRandomQuote(quotes);
     let print = "";
@@ -97,10 +106,12 @@ function printQuote () {
 
     print += '</p>';
     console.log(print);
+
     // loading quote to page
     document.getElementById('quote-box').innerHTML = print;
-
 }
 
 // show quote with button click
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+
