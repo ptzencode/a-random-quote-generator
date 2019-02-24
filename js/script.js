@@ -107,6 +107,10 @@ function printQuote () {
     print += '</p>';
     console.log(print);
 
+    //changing body background
+    let color = createColor();
+    document.querySelector('body').style.backgroundColor = color;
+
     // loading quote to page
     document.getElementById('quote-box').innerHTML = print;
 }
