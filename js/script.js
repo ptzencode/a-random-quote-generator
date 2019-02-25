@@ -104,6 +104,13 @@ function printQuote () {
         print += '<span class="year">' + quoteObj.year + '</span>';
     }
 
+    if (quoteObj.tags) {
+        //adding tags to quote
+        print += '<p class="tags">tags<span class="tag-list">';
+        print += quoteObj.tags.join(', ');
+        print += '</span></p>';
+    }
+
     print += '</p>';
     console.log(print);
 
