@@ -78,7 +78,6 @@ function init () {
         let max = quoteArray.length;
         let index = Math.floor(Math.random() * max);
         let quote = quoteArray[index];
-        console.log(quote);
         return quote;
     }
 
@@ -120,7 +119,6 @@ function init () {
         }
 
         print += '</p>';
-        console.log(print);
 
         //changing body background
         let color = createColor();
