@@ -92,6 +92,12 @@ function init () {
     }
 
     function printQuote () {
+        // clear any previous timeout
+        // enables smooth behaviour, especially when button is clicked to show quote
+        if (timeoutID) {
+            clearTimeout(timeoutID);
+        }
+
         let quoteObj = getRandomQuote(quotes);
         let print = "";
 
@@ -122,11 +128,17 @@ function init () {
 
         // loading quote to page
         document.getElementById('quote-box').innerHTML = print;
+
+        //reset timeout
+        //continue to show quote after 3s, even when button is not clicked
+        timeoutID = setTimeout(printQuote, 3000);
     }
 
-    // show quote with button click
+    // show quote immediately - with button click
     document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
+    //show quote after 3s - without button click
+    var timeoutID = setTimeout(printQuote, 3000);
 }
 
 //The load event fires when the document has finished loading
