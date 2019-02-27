@@ -128,15 +128,15 @@ function init () {
         document.getElementById('quote-box').innerHTML = print;
 
         //reset timeout
-        //continue to show quote after 3s, even when button is not clicked
-        timeoutID = setTimeout(printQuote, 3000);
+        //continue to show quote after 5s, even when button is not clicked
+        timeoutID = setTimeout(printQuote, 5000);
     }
 
     // show quote immediately - with button click
     document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
-    //show quote after 3s - without button click
-    var timeoutID = setTimeout(printQuote, 3000);
+    //show quote after 5s - without button click
+    var timeoutID = setTimeout(printQuote, 5000);
 }
 
 //The load event fires when the document has finished loading
