@@ -81,21 +81,14 @@ function init () {
         return quote;
     }
 
-    // create random color as hsl
-    function createColor() {
-      function colorComponent(min,max) {
-        return Math.floor(Math.random()*(max-min + 1)) + min;
-      }
-
-      let h = colorComponent(0,360)+'deg';
-      //custom saturation & lightness range for good contrast background color
-      //avoid very saturated >90% & very de-saturated <40% (like gray)
-      let s = colorComponent(40,90)+'%';
-      //avoid very dark <20% (near black) & very light >50% (near white)
-      let l = colorComponent(20,50)+'%';
-      //example blue is hsl(240, 100%, 50%)
-      let color = "hsl(" + h + ","+ s + ","+ l + ")";
-      return color;
+    // create random color as rgb
+    function createColor () {
+        function colorComponent() {
+            return Math.floor(Math.random()*255 + 1);
+        }
+        // example: green is rgb(51,170,51)
+        let color = "rgb(" + colorComponent()+ ","+ colorComponent()+ ","+ colorComponent()+ ")";
+        return color;
     }
 
     function printQuote () {
