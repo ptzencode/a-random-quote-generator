@@ -81,13 +81,18 @@ function init () {
         return quote;
     }
 
-    function createColor () {
-        function colorComponent() {
-            return Math.floor(Math.random()*255 + 1);
-        }
-        // example: green is rgb(51,170,51)
-        let color = "rgb(" + colorComponent()+ ","+ colorComponent()+ ","+ colorComponent()+ ")";
-        return color;
+    // create random color as hsl
+    function createColor() {
+      function colorComponent(max) {
+        return Math.floor(Math.random()*max + 1);
+      }
+
+      let h = colorComponent(360)+'deg';
+      let s = colorComponent(100)+'%';
+      let l = colorComponent(100)+'%';
+      //example: green is hsl(120deg, 54%, 43%)
+      let color = "hsl(" + h + ","+ s + ","+ l + ")";
+      return color;
     }
 
     function printQuote () {
